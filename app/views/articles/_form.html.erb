@@ -14,7 +14,10 @@
             <div class="text-red-500 text-sm mt-1"><%= message %></div>
         <% end %>
     </div>
-
+    <div class="mb-4">
+        <%= form.label :status, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public', class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
     <div>
         <%= form.submit submit_action_text, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
     </div>
